@@ -1,20 +1,9 @@
 import torch
 from torchvision.models import resnet50
 from torchvision import datasets, transforms
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 
-
-# 读取类别文件
-def readClasses():
-    classes = []
-    with open('imageNet_1.txt', 'r') as fp:
-        readlines = fp.read().strip().split('\n')
-        for line in readlines:
-            classes.append(line[line.find(' ') + 1:].split(',')[0])
-    return classes
-
-
-def Model():
+if __name__ == '__main__':
     is_gpu = torch.cuda.is_available()
     device = torch.device('cuda:0' if is_gpu else "cpu")
 
@@ -128,9 +117,3 @@ def Model():
                                                                                         testCorrect * 1.0 / testTotal))
         # 保存模型
         torch.save(modelResNet50, './models/modelResNet50_{}.pth'.format(i))
-
-
-if __name__ == '__main__':
-    # readClasses()
-    classes = readClasses()
-    Model()
