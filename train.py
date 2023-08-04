@@ -125,7 +125,7 @@ def Model():
                 testTotal += imgs.shape[0]
                 # 计算总的损失
                 testLoss += loss.item()
-            print('-----------test:--------loss: {:.6f}---------correct: {:.6f}'.format(testLoss * 1.0 / testTotal,
+            print('test:————loss: {:.6f}————correct: {:.6f}'.format(testLoss * 1.0 / testTotal,
                                                                                         testCorrect * 1.0 / testTotal))
         # 保存模型
         torch.save(modelResNet50, './models/modelResNet50_{}.pth'.format(i))
