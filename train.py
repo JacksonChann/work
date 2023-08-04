@@ -2,7 +2,6 @@ import torch
 from torchvision.models import resnet50
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, Dataset
-from torch.utils.tensorboard import SummaryWriter
 
 
 # 读取类别文件
