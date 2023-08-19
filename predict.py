@@ -2,6 +2,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
+# GPU加速
 is_gpu = torch.cuda.is_available()
 device = torch.device('cuda:0' if is_gpu else "cpu")
 
