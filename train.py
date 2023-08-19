@@ -4,6 +4,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
 if __name__ == '__main__':
+    # GPU加速
     is_gpu = torch.cuda.is_available()
     device = torch.device('cuda:0' if is_gpu else "cpu")
 
